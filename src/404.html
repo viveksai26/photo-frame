@@ -9,6 +9,7 @@
   <script>
     // Store the URL the user was trying to access when receiving the 404.
     sessionStorage.redirect = location.href;
+    console.log(location.href);
   </script>
 
   <!-- Immediately redirect to the base URL so we can use the SPA routing. -->
@@ -35,6 +36,7 @@
       delete sessionStorage.redirect;
       // Check if we actually need to redirect.
       if (redirect && redirect != location.href) {
+        console.log(location.href);
         // We need to redirect to the URL the user was trying to access.
         history.replaceState(null, null, redirect);
       }
