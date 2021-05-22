@@ -2,3 +2,31 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* For Header, footer, main */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%
+}
+.main {
+    flex-grow: 1
+}
+.footer {
+    bottom: 0;
+    width: 100%;
+    color: white;
+    line-height:2em;
+    background-color: #343a40;
+}
+/* For Header, footer, main */
+
+
+
+/* Full classes */
+.fullwidth {
+    width: 100% !important;
+}
+.fullheight {
+    height: 100% !important;
+}

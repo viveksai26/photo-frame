@@ -6,9 +6,8 @@ import { RouterModule } from '@angular/router';
 import { AppMaterialModule } from '../../../styles/app-material.module';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SecureSidebarComponent } from '../secure-sidebar/secure-sidebar.component';
 @NgModule({
-  declarations: [SecureLayoutComponent, SecureHeaderComponent, SecureFooterComponent, SecureSidebarComponent],
+  declarations: [SecureLayoutComponent, SecureHeaderComponent, SecureFooterComponent],
   imports: [RouterModule, AppMaterialModule, CommonModule, FormsModule, ReactiveFormsModule],
   exports: [SecureLayoutComponent]
 })

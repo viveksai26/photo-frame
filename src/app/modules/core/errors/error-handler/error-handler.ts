@@ -13,10 +13,11 @@ export class CustomErrorHandler implements ErrorHandler {
     if (error instanceof HttpErrorResponse) {
       return error;
     }
-    errorService.log(error).subscribe((errorWithContext) => {
-      ngZone.run(() => {
-        router.navigate(['/error'], { queryParams: { error: errorWithContext } });
-      });
-    });
+    console.error(error);
+    // errorService.log(error).subscribe((errorWithContext) => {
+    //   ngZone.run(() => {
+    //     router.navigate(['/error'], { queryParams: { error: errorWithContext } });
+    //   });
+    // });
   }
 }
