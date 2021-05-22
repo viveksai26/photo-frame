@@ -34,7 +34,7 @@ export class AutoLoginService implements CanActivate {
         localStorage.removeItem(AppConstants.G_ID_TOKEN);
         localStorage.removeItem(AppConstants.G_AUTH_TOKEN);
         this.AutheticationService.isLoggedIn = false;
-        this.router.navigateByUrl('https://viveksai26.github.io/common-client/login');
+        // this.router.navigateByUrl('https://viveksai26.github.io/common-client/login');
         return of(true);
       })
     );

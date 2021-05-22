@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SnackBarComponent } from './modules/core/services/notification/snackbar.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorModule } from './modules/core/errors/error.module';
 import { PublicModule } from './modules/feature/public/public.module';
 import { SecureModule } from './modules/feature/secure/secure.module';
@@ -15,8 +15,9 @@ import { SharedModule } from './modules/shared/shared.module';
 import { BlockUIModule } from 'ng-block-ui';
 import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 'angularx-social-login';
 import { environment } from 'src/environments/environment';
+import { HttpInterceptor } from './modules/core/interceptors/http.interceptor';
 const googleLoginOptions = {
-  scope: 'profile email photoslibrary'
+  scope: 'profile email https://www.googleapis.com/auth/photoslibrary'
 };
 @NgModule({
   declarations: [AppComponent, SnackBarComponent],
@@ -49,6 +50,11 @@ const googleLoginOptions = {
           }
         ]
       } as SocialAuthServiceConfig
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptor,
+      multi: true
     }
   ],
   bootstrap: [AppComponent]

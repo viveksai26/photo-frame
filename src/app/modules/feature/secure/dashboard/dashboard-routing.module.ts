@@ -8,7 +8,6 @@ const routes: Routes = [
   {
     path: '',
     component: SecureLayoutComponent,
-    canActivate: [AutoLoginService],
     children: [{ path: '', component: DashboardComponent }]
   }
 ];
